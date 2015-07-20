@@ -1,0 +1,43 @@
+/*
+* Author:   Michael Mazzone (GitMazzone)
+* Date:     July 20, 2015
+* About:    /r/dailyprogrammer easy challenge 2:
+*           create a calculator for something you
+*           calculate in real life
+* */
+
+import java.util.*;
+import java.text.*;
+
+public class DP_Easy_2{
+
+    static Scanner scan = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        double bank, check, savings;
+        int numOfChecks;
+        double savingPercent = .15;
+
+        System.out.print("Amount in bank: $");
+        bank = scan.nextDouble();
+
+        System.out.print("Last check amount: $");
+        check = scan.nextDouble();
+
+        savings = check * savingPercent;
+
+        System.out.println("15% of that check is $" + savings);
+
+        System.out.print("\nHow many paychecks do you want to calculate? ");
+        numOfChecks = scan.nextInt();
+
+        System.out.println("\n# of paychecks: \tsavings total:");
+        for(int i = 1; i < numOfChecks + 1; i++){
+            System.out.print("\n" + i);
+            System.out.print("\t\t\t\t\t$" + (bank + (savings * i)));
+        }
+
+        System.out.println();
+    }
+}

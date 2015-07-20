@@ -1,0 +1,46 @@
+/*
+* Author:   Michael Mazzone (GitMazzone)
+* Date:     July 20, 2015
+* About:    /r/dailyprogrammer easy challenge 1:
+*           ask the users name, age, and reddit username
+*           repeat it back to them
+*           save as a file for extra credit
+* */
+
+import java.util.*;
+
+public class DP_Easy_1{
+
+    static Scanner scan = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        String realName;
+        String username;
+        int age = 1;
+
+        System.out.print("First name: ");
+        realName = scan.nextLine();
+
+        boolean validAge = false;
+        do{
+            System.out.print("Age: ");
+            age = scan.nextInt();
+
+            if(age > 90){
+                System.out.println("BS.");
+                validAge = false;
+            }
+            if(age > 1){
+                validAge = true;
+            }
+        }while(!validAge);  //Keeps user in loop until valid age is given
+
+        System.out.print("Username: ");
+        username = scan.next();
+
+        System.out.println("Your name is " + realName
+                            + ", you're " + age + " years old, "
+                            + "and your username is " + username + ".");
+    }
+}
